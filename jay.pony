@@ -5,8 +5,7 @@ trait val JExpr
 	fun json(): JsonType
 	fun string(): String val
 
-// this can't be (JExpr | ...) instead of (JObj | JArr | ...), until [this](https://github.com/ponylang/ponyc/issues/3096) is fixed
-type J is (JObj | JArr | String | I64 | F64 | Bool | None)
+type J is (JExpr | String | I64 | F64 | Bool | None)
 
 primitive NotSet is Stringable
 	fun string(): String iso ^ => "NotSet".string()
